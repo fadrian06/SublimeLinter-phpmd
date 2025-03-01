@@ -26,24 +26,13 @@ A local install allows you to fine-tune `phpmd` on a per-project basis. A global
 
 On a command line inside your project:
 ```bash
-composer require phpmd/phpmd
-```
-
-Inside Sublime, go to **Preferences -> Package Settings -> SublimeLinter -> Settings**.
-
-Set the `phpmd` executable by adding/editing:
-```json
-  "linters": {
-    "phpmd": {
-      "executable": "${folder}/vendor/bin/phpmd"
-    }
-  }
+composer require phpmd/phpmd --dev
 ```
 
 #### Global install with [Composer](https://getcomposer.org/)
 
 ```bash
-composer global require phpmd/phpmd
+composer global require phpmd/phpmd --dev
 ```
 
 Make sure the composer global bin directory is available in $PATH:
@@ -64,19 +53,6 @@ pear install --alldeps phpmd/PHP_PMD
 
 - SublimeLinter settings: http://sublimelinter.com/en/latest/settings.html
 - Linter settings: http://sublimelinter.com/en/latest/linter_settings.html
-
-### Additional settings
-
-If you want to use a baseline file, the linter needs to run on the actual files instead of the temporary files we need for real-time "background" linting. 
-Therefore, set the "real_file_mode" setting to true.
-
-```json
-"linters": {
-  "phpmd": {
-    "real_file_mode": true
-  }
-}
-```
 
 ### Rulesets
 
